@@ -36,3 +36,13 @@ const secondFunc = createOuterFunc();
 
 secondFunc(); // returns 1
 secondFunc(); // returns 2
+
+/** When we call the createOuterFunc(), and the code starts running inside it,
+ * Then , immediately as we save the function incrementCounter (when we counter line 18), a hidden property '[[scope]]' on the function incrementCounter, creates a link to the local memory and attaches all the data/properties (not all the data/properties in that local memory but only which our function could ever ask for) to the function definition incrementCounter. (this happens under the hood)
+ * We cannot do incrementCounter.[[scope]] as it is a hidden property.
+ * Now, when we return the inner function or say, bring out this function into our new function, i.e. secondFunc (as on line 29), it brings out all that local memory that was attached on the [[scope]] property along with it in, what we already discussed, 'the backpack'.
+ */
+
+ /** NOTE - INDIVIDUAL BACKPACK 
+  * The backpack reutrned along with the definition is unique for the new function label, i.e, if we have say, const thirdFunc = createOuterFunc(), then the backpacks associated with secondFunc and thirdFunc are different/separate and won't interfere or update/modify values or data in other's backpack.
+ */
