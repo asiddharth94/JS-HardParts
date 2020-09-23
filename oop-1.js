@@ -123,5 +123,18 @@ const user6 = createUserTwo('Mark', 22);
 console.log('Object.create with prototype', user6); //returns 23 - once it could not find the incrementScore 
 //function on user6, it looks up in the functionStore 
 
+//This solution does our work but it's a bit long winded. we manually create the objects, bond and return the object
+
+//There is a better way - the 'new' keyword --> the keyword that automates this hard work
+
+//Calling the constructor function with new keyword in front of it, automtically creates an object and 
+//then returns the object for us. 
+//But now we have two concerns - 
+//1. how do we refer to the auto-created object, like how we do with newUser in our function? --> answer: 'this'
+//2. how will we create our bond through the hidden property __proto__ to set of shared functions? --> answer: go to ./new-keyword-answer.txt
+
+
+
+
 // THIS keyword - 
 // Rule 1 - it refers to whatever is on the left side of the dot , i.e, on whatever object the function is being called

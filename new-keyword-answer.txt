@@ -1,0 +1,27 @@
+In Javascript, functions are 'functions' and 'objects'.
+
+As soon as we declare our function, the label gets attached to the fn body, and plus, an object.
+
+We could access the function part with the help of (), whereas the object part with dot notation.
+
+So, when we declare a function (or, you could say our function-object combo) -
+    the object part gets a property "prototype", which is again an empty object.
+
+This is the place which we might want to use to put all our functions in. (functionStore in our example)
+
+*** BY DEFAULT, ALL FUNCTIONS HAVE A PROPERTY ON THEIR OBJECT VERSION KNOWN AS "prototype",
+which is itself an empty object ***
+
+-------- REFER ./new-keyword-answer-1.png for visual representation ---------
+
+new keyword - 
+    1. creates an empty object when the function is invoked, which we could access with this
+    2. add the property __proto__ which links to the 'prototype' property of the object part 
+       of the function which is called
+    3. returns the created object
+
+-------- REFER ./new-keyword-answer-2.png for visual representation ---------
+
+*** the things marked with blue pen in the above image are done automatically by the 'new' keyword
+
+*** NOW, WE'VE A FANCY NAME FOR THIS FUNCTION-OBJECT COMBO --- "CLASS" ***
