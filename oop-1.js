@@ -34,6 +34,8 @@ user2.incrementScore = function() {
     return ++this.score;
 };
 
+console.log('with Object literal -->', user2);
+
 //type three - using Object.create()
 
 const user3 = Object.create(null); // At the end of this line, an empty object is created.
@@ -45,6 +47,8 @@ user3.score = 9;
 user3.incrementScore = function() {
     return ++this.score;
 };
+
+console.log('with Object.create -->', user3);
 
 //At this point , we're writing very repetitive code, which violates our DRY priniciple
 
@@ -113,6 +117,11 @@ function createUserTwo(name, score) {
 
  //This built-in feature is called PROTOTYPE CHAIN
 
+ //The functionStore is called the "prototype" of user6 here
+
 const user6 = createUserTwo('Mark', 22);
-console.log(user6.incrementScore()); //returns 23 - once it could not find the incrementScore 
+console.log('Object.create with prototype', user6); //returns 23 - once it could not find the incrementScore 
 //function on user6, it looks up in the functionStore 
+
+// THIS keyword - 
+// Rule 1 - it refers to whatever is on the left side of the dot , i.e, on whatever object the function is being called
