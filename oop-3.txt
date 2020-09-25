@@ -1,0 +1,33 @@
+*** DEFAULT PROTOTYPE CHAIN ***
+
+All objects by default have their __proto__ linked to the 'prototype' of Object(this is again an 
+func, i.e in JS, a func-obj combo). 
+
+> new Object() returns an object
+
+[Everything surrounded in orange in the images, is put by JS for us. We did not declare that]
+------------ Refer './default-prototype-chain-1.png' for visual representation -------------
+
+With Object.create(), we override the default __proto__ reference to Object.prototype and replace
+with our function store (the custom one - one which we pass in the args).
+
+But function store is again an object, so it has a __proto__ reference to Object.prototype -
+we just intercede in the chain.
+
+Prototype chain is a chain of these linkups.
+
+Arrays are Functions are also objects, so they get access to all the functions in Object.prototype,
+but they also get some extra goodies.
+
+The Functions (object part) have their __proto__ linked to Function.prototype which in turn has its
+__proto__ linked to Object.prototype. (thus, some extra goodies from this Function.prototype)
+
+Similarly, for Arrays. Array.prototype -> Object.prototype.
+
+------------ Refer './default-prototype-chain-2.png' for visual representation -------------
+
+>>>>>>>> Object.prototype is NULL (This is where the chain ends)
+
+
+TODO: READ ON MDN - __proto__ is now a private variable and not exposed by default on the object;
+you now should use Object.getPrototypeOf to grab an object's prototype
