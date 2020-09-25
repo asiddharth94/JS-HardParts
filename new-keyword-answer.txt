@@ -1,6 +1,9 @@
 In Javascript, functions are 'functions' and 'objects'.
 
-As soon as we declare our function, the label gets attached to the fn body, and plus, an object.
+------- ALL FUNCTIONS ARE FUNCTION-OBJECT COMBOS. ALL! --------
+
+As soon as we declare our function, the fn body gets attached to the fn label, and plus, an object
+also gets attached to the label.
 
 We could access the function part with the help of (), whereas the object part with dot notation.
 
@@ -15,9 +18,9 @@ which is itself an empty object ***
 -------- REFER ./new-keyword-answer-1.png for visual representation ---------
 
 new keyword - 
-    1. creates an empty object when the function is invoked, which we could access with this
-    2. add the property __proto__ which links to the 'prototype' property of the object part 
-       of the function which is called
+    1. creates an empty object when the function is invoked, which we could access with 'this'
+    2. add the property __proto__ which links to the 'prototype' property (where we can put our functions)
+       of the object part of the function which is invoked to create these objects
     3. returns the created object
 
 -------- REFER ./new-keyword-answer-2.png for visual representation ---------
